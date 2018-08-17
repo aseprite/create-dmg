@@ -68,7 +68,7 @@ while test "${1:0:1}" = "-"; do
       BACKGROUND_FILE="$2"
       BACKGROUND_FILE_NAME="$(basename $BACKGROUND_FILE)"
       BACKGROUND_CLAUSE="set background picture of opts to file \".background:$BACKGROUND_FILE_NAME\""
-      REPOSITION_HIDDEN_FILES_CLAUSE="set position of every item to {theBottomRightX + 100, 100}"
+      REPOSITION_HIDDEN_FILES_CLAUSE="set position of every item to {theWidth + 100, 100}"
       shift; shift;;
     --icon-size)
       ICON_SIZE="$2"
