@@ -16,9 +16,11 @@ on run (volumeName)
 				set current view to icon view
 				set toolbar visible to false
 				set statusbar visible to false
+				set pathbar visible to false
 				set the bounds to {theXOrigin, theYOrigin, theBottomRightX, theBottomRightY}
 				set statusbar visible to false
 				REPOSITION_HIDDEN_FILES_CLAUSE
+				set pathbar visible to false
 			end tell
 
 			set opts to the icon view options of container window
@@ -45,6 +47,7 @@ on run (volumeName)
 
 			tell container window
 				set statusbar visible to false
+				set pathbar visible to false
 				set the bounds to {theXOrigin, theYOrigin, theBottomRightX - 10, theBottomRightY - 10}
 			end tell
 		end tell
@@ -54,6 +57,7 @@ on run (volumeName)
 		tell disk (volumeName as string)
 			tell container window
 				set statusbar visible to false
+				set pathbar visible to false
 				set the bounds to {theXOrigin, theYOrigin, theBottomRightX, theBottomRightY}
 			end tell
 		end tell
