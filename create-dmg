@@ -474,7 +474,8 @@ fi
 VOLUME_NAME=$(basename $MOUNT_DIR)
 
 # Run AppleScript to do all the Finder cosmetic stuff
-APPLESCRIPT_FILE=$(mktemp -t createdmg.tmp.XXXXXXXXXX)
+#APPLESCRIPT_FILE=$(mktemp -t createdmg.tmp.XXXXXXXXXX)
+APPLESCRIPT_FILE="/tmp/createdmg.tmp.applescript"
 if [[ $SANDBOX_SAFE -eq 1 ]]; then
 	echo "Skipping Finder-prettifying AppleScript because we are in Sandbox..."
 else
@@ -506,7 +507,7 @@ else
 		fi
 		echo "Done running the AppleScript..."
 		sleep 4
-		rm "$APPLESCRIPT_FILE"
+		#rm "$APPLESCRIPT_FILE"
 	else
 		echo ''
 		echo "Will skip running AppleScript to configure DMG aesthetics because of --skip-jenkins option."
