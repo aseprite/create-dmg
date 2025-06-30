@@ -19,7 +19,6 @@ on run (volumeName)
 				set pathbar visible to false
 				set the bounds to {theXOrigin, theYOrigin, theBottomRightX, theBottomRightY}
 				set statusbar visible to false
-				REPOSITION_HIDDEN_FILES_CLAUSE
 				set pathbar visible to false
 			end tell
 
@@ -29,17 +28,6 @@ on run (volumeName)
 				set text size to TEXT_SIZE
 				set arrangement to not arranged
 			end tell
-			BACKGROUND_CLAUSE
-
-			-- Positioning
-			POSITION_CLAUSE
-
-			-- Hiding
-			HIDING_CLAUSE
-
-			-- Application and QL Link Clauses
-			APPLICATION_CLAUSE
-			QL_CLAUSE
 			close
 			open
 			-- Force saving of the size
