@@ -1,6 +1,21 @@
 on run (volumeName)
 	tell application "Finder"
 		tell disk (volumeName as string)
+      -- Wait for the image to finish mounting
+      set open_attempts to 0
+      repeat while open_attempts < 4
+        try
+          open
+          delay 1
+          set open_attempts to 5
+          close
+        on error errStr number errorNumber
+          log "Error during open attempt " & open_attempts & ": " & errStr
+          set open_attempts to open_attempts + 1
+          delay 10
+        end try
+      end repeat
+
 			open
 
 			set theXOrigin to WINX
